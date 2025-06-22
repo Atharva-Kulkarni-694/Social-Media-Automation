@@ -8,10 +8,6 @@
 
 ---
 
-## 📊 Dashboard Preview  
-*(Sample Screenshot)*  
-![Dashboard](docs/screenshot-dashboard.png)
-
 ---
 
 ## ✨ Key Features  
