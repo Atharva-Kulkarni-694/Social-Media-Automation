@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="row mt-4">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-white">
+                <h5 class="mb-0"><i class="bi bi-activity"></i> Recent Activity</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Platform</th>
+                                <th>Content</th>
+                                <th>Scheduled Time</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for post in recent_posts %}
+                            <tr>
+                                <td><span class="badge bg-{{ 'primary' if post.platform == 'twitter' else 'success' if post.platform == 'facebook' else 'danger' }}">
+                                    {{ post.platform|title }}
+                                </span></td>
+                                <td>{{ post.content|truncate(50) }}</td>
+                                <td>{{ post.scheduled_time.strftime('%Y-%m-%d %H:%M') }}</td>
+                                <td><span class="badge bg-{{ 'success' if post.posted else 'warning' }}">
+                                    {{ 'Posted' if post.posted else 'Pending' }}
+                                </span></td>
+                            </tr>
+                            {% else %}
+                            <tr>
+                                <td colspan="4" class="text-center text-muted">No scheduled posts yet</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header bg-white">
+                <h5 class="mb-0"><i class="bi bi-lightning-charge"></i> Quick Actions</h5>
+            </div>
+            <div class="card-body">
+                <a href="{{ url_for('schedule') }}" class="btn btn-primary w-100 mb-3">
+                    <i class="bi bi-plus-circle"></i> Schedule New Post
+                </a>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="bi bi-people"></i> Audience Growth
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="bi bi-heart"></i> Engagement Rate
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="bi bi-gear"></i> Settings
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

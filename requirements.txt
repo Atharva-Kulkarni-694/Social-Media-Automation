@@ -1,0 +1,30 @@
+# Core
+flask
+flask-sqlalchemy
+pymysql
+flask-login
+werkzeug
+
+# Data Processing
+pandas 
+numpy   
+scikit-learn
+
+# Social Media APIs
+tweepy
+facebook-sdk
+python-instagram
+python-linkedin
+instagram-private-api
+
+# Visualization
+matplotlib
+seaborn
+
+# Utilities
+python-dotenv
+apscheduler
+schedule
+
+# Development
+pytest
