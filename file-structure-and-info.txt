@@ -1,0 +1,25 @@
+social-media-automation/
+├── app/                # 🚀 Core application files
+│   ├── blueprints/     # 🛤️ Route handlers
+│   ├── services/       # ⚙️ Business logic
+│   ├── static/         # 🎨 CSS/JS assets
+│   ├── templates/      # 🖌️ HTML templates
+│   ├── __init__.py     # 🏗️ App factory
+│   └── models.py       # 💾 Database models
+├── config/             # ⚙️ Configuration files
+├── migrations/         # 🗃️ Database versioning
+├── tests/              # 🧪 Unit tests
+├── requirements.txt    # 📦 Python dependencies
+├── run.py              # 🚀 Application entry point
+└── LICENSE             # ⚖️ MIT License
+
+
+
+#Common issues and Solutios
+
+| ❗ Problem                  | 💡 Solution                                      |
+| --------------------------- | ------------------------------------------------- |
+| `ImportError`               | Run: `pip install -r requirements.txt`            |
+| Database connection issues  | Check if MySQL service is running                 |
+| API rate limits             | Implement exponential backoff in integration code |
+| Session expiration too soon | Adjust session timeout in the config file         |
